@@ -1,0 +1,16 @@
+<div style="margin-top: 150px; text-align: center;">
+    <h1>Search Chef</h1>
+    <form #searchChefForm="ngForm" (ngSubmit)="searchChef()">
+        <div class="form-group col-md-12">
+            <input type="text" [(ngModel)]="chef.speciality" [ngModelOptions]="{standalone:true}"
+                placeholder="Chef Speciality">
+        </div>
+        <button type="submit">Search</button>
+    </form>
+
+    
+</div>
+
+<div *ngFor="let chef of findedChefs">
+    <app-chef [chefInput]='chef'></app-chef>
+</div>

@@ -1,0 +1,16 @@
+<div style="margin-top: 150px; text-align: center;">
+    <h1>Search Plat</h1>
+    <form #searPlatForm = "ngForm" (ngSubmit) = "searchPlat()">
+        <div class="form-group col-md-12">
+            <input type="text" [(ngModel)] = "plat.name" [ngModelOptions] = "{standalone:true}" placeholder="Plat Name">
+        </div>
+        <div class="form-group col-md-12">
+            <input type="text" [(ngModel)] = "plat.price" [ngModelOptions] = "{standalone:true}" placeholder="Plat Price">
+        </div>
+        <button type="submit">Search</button>
+    </form>
+</div>
+
+<div *ngFor= "let p of findedPlats">
+<app-plat [inputPlat] = 'p'></app-plat>
+</div>

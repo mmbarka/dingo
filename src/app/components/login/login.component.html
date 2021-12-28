@@ -1,0 +1,54 @@
+<section class="regervation_part section_padding" style="margin-top: 100px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-5">
+                <div class="section_tittle">
+                    <h2>Login</h2>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="regervation_part_iner">
+                    <form #loginForm="ngForm" (ngSubmit)="login()">
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <input type="email" [(ngModel)]="obj.email" [ngModelOptions]="{standalone:true}"
+                                    class="form-control" placeholder="Email">
+                            </div>
+
+                            <!-- <input type="text" id="name" name="name" class="form-control" required minlength="4"
+                                appForbiddenName="bob" [(ngModel)]="hero.name" #name="ngModel">
+
+                            <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert">
+
+                                <div *ngIf="name.errors?.['required']">
+                                    Name is required.
+                                </div>
+                                <div *ngIf="name.errors?.['minlength']">
+                                    Name must be at least 4 characters long.
+                                </div>
+                                <div *ngIf="name.errors?.['forbiddenName']">
+                                    Name cannot be Bob.
+                                </div>
+
+                            </div> -->
+                            <div class="form-group col-md-12">
+                                <input type="password" [(ngModel)]="obj.password" [ngModelOptions]="{standalone:true}"
+                                    class="form-control" placeholder="Password">
+                            </div>
+                        </div>
+
+                        <div class="regerv_btn">
+                            <button class="btn_4">Login</button>
+                        </div>
+                        <div style="color: red;">
+                            {{errorMsg}}
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

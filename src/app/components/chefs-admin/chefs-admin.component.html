@@ -1,0 +1,27 @@
+<button (click)="goToAddChef()" class="btn btn-success">Add Chef</button>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Speciality</th>
+        <th scope="col">Experience</th>
+        <th scope="col">Image</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let chef of chefs;">
+            <td>{{chef._id}}</td>
+            <td>{{chef.name}}</td>
+            <td>{{chef.speciality}}</td>
+            <td>{{chef.experience}}</td>
+            <td style="width: 100px; height: 100px;"><img [src]="chef.img" alt=""></td>
+            <td>
+                <button class="btn btn-success" (click)="goToDisplayChefInformation(chef._id)">Display</button>
+                <button class="btn btn-info" (click)="goToEditChef(chef._id)">Edit</button>
+                <button (click)="deleteChef(chef._id)"class="btn btn-danger">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+  </table>
